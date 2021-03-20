@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import LandingPage from '../components/home/LandingPage';
+import LandingPage from "../components/shared/Header";
 
 import PropTypes from "prop-types";
 

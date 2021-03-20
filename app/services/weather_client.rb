@@ -12,7 +12,7 @@ class WeatherClient
   private
 
   def weather_params(params)
-    weather_params={
+    weather_params = {
       q: params[:city],
       appid: API_KEY
     }

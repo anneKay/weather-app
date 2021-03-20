@@ -2,5 +2,4 @@ import React from "react";
 const HomePage = () => (
   <div></div>
 )
-
-expirt 
+export default HomePage;

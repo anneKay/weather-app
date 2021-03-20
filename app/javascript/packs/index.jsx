@@ -4,7 +4,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom'
-import '../../stylesheets/App.scss'
+// import '../../stylesheets/App.scss'
 // import '../../assets/stylesheets/app.scss'
 import App from '../routes/App';
 
