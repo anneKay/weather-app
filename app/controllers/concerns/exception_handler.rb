@@ -5,12 +5,14 @@ module ExceptionHandler
   class MissingToken < StandardError; end
   class InvalidToken < StandardError; end
   class MissingSecretKey < StandardError; end
+  class ConnectionError < StandardError; end
 
   included do
     rescue_from ExceptionHandler::AuthenticationError, with: :unauthorized_request
     rescue_from ExceptionHandler::MissingToken, with: :unprocessable_request
     rescue_from ExceptionHandler::InvalidToken, with: :unprocessable_request
-    rescue_from ExceptionHandler::MissingSecretKey, with: :unprocessable_entity
+    rescue_from ExceptionHandler::MissingSecretKey, with: :unprocessable_request
+    rescue_from ExceptionHandler::ConnectionError, with: :unprocessable_request
   end
 
   private
