@@ -48,8 +48,11 @@ The deployed version of the app is hosted on heroku,  however, due to some limit
   5. Go to http://localhost:3000 to interact with the app.
 
   6. To interact with the API only
-  7. Go to `http://localhost:3000/v1/users` to sign up, params: [email, name, password]
-  8. Go to `http://localhost:3000/v1/auth/login` to login, params: [params: email, password]
+  7. Go to `http://localhost:3000/v1/users` to sign up, 
+  ```params => {email: email, name:name, password:password}```
+
+  8. Go to `http://localhost:3000/v1/auth/login` to login, 
+  ```params => auth: { email:email, password:password}```
 ### What did you not include in your solution that you want us to know about?
   1. I would have used redis to cache data
  2. I would have added extra feature that allows user to view his recent searches/history
