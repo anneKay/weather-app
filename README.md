@@ -18,18 +18,20 @@ a sample query - https://localhost:3000/v1/weather?city=lagos
   Run rails db:migrate
 
 * How to run the test suite
-
+Run rspec spec
 This API retrieves current weather data from https://openweathermap.org/current 
 
 ### Submission Date
 21/03/2021
 ### Location of deployed application
-
+https://sheltered-reaches-68131.herokuapp.com/
 ### Time spent
 5 hours
 ### Assumptions made
 The user should search by city to retrieve weather data
 The user needs to signup to be able to search for weather
+To make a request to retrieve weather, user needs to add the token generated during login to the request header
+
 ### Shortcuts/Compromises made
   This solution does not have it's own validation. It only uses html5 form validation
 ### Stretch goals attempted
@@ -44,9 +46,14 @@ The deployed version of the app is hosted on heroku,  however, due to some limit
   Run yarn 
   Run rails s to start the server
   Go to http://localhost:3000 to interact with the app.
+
+  To interact with the API only
+  Go to `http://localhost:3000/v1/users` to sign up, params: [email, name, password]
+  Go to `http://localhost:3000/v1/auth/login` to login, params: [params: email, password]
 ### What did you not include in your solution that you want us to know about?
   I would have used redis to cache data
   I would have added extra feature that allows user to view his recent searches/history
+  I would also write more unit test both for the backend and frontend
 ### Other information about your submission that you feel it's important that we know if applicable.
 
 * ...
