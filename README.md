@@ -9,17 +9,20 @@
 
 * Ruby version
 
-  Ruby 2.7.2
+  >- Ruby 2.7.2
+
+* Rails version
+  >- Rails 6.1.3
 
 * System dependencies
-  Node version - >=10.17.0
+  >- Node version - >=10.17.0
 
 * Database creation
-  Run rails db:create 
-  Run rails db:migrate
+  >- Run rails db:create 
+  >- Run rails db:migrate
 
 * How to run the test suite
-Run rspec spec
+ >- Run rspec spec
 
 ### Submission Date
 21/03/2021
@@ -38,6 +41,7 @@ https://sheltered-reaches-68131.herokuapp.com/
 1. Has a simple UI service which can be accessed at the root route
 2. Uses JWT for authentication
 3. Fetched real weather data from https://openweathermap.org/current 
+4. App deployed online to heroku: https://sheltered-reaches-68131.herokuapp.com/
 ### Instructions to run assignment locally
   1. CD into the root directory
   2.  Run bundle install
@@ -46,13 +50,13 @@ https://sheltered-reaches-68131.herokuapp.com/
   5. Go to http://localhost:3000 to interact with the app.
 
   6. To interact with the API only
-  7. Go to `http://localhost:3000/v1/users` to sign up, 
+   >- Go to `http://localhost:3000/v1/users` to sign up, 
   ```params => {email: email, name:name, password:password}```
 
-  8. Go to `http://localhost:3000/v1/auth/login` to login, 
+    >- Go to `http://localhost:3000/v1/auth/login` to login, 
   ```params => auth: { email:email, password:password}```
 
-  9. Run `http://localhost:3000/v1/weather?city={city}` to retrieve weather information. To run this request successfuly, add user token to request header; Authorization: "Bearer #{token}"
+   >- Run `http://localhost:3000/v1/weather?city={city}` to retrieve weather information. To run this request successfuly, add user token to request header; Authorization: "Bearer #{token}"
 ### What did you not include in your solution that you want us to know about?
   1. I would have used redis to cache data
  2. I would have added extra feature that allows user to view his recent searches/history
