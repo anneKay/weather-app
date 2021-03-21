@@ -1,5 +1,5 @@
 class WeatherClient
-  BASE_URL = "https://api.openweathermap.org/data/2.5/weather".freeze
+  BASE_URL = Rails.application.credentials.base_url
   API_KEY = Rails = Rails.application.credentials.api_key
 
   def get_weather(params)
@@ -19,7 +19,6 @@ class WeatherClient
   end
 
   def client
-    # Faraday.new('http://www.example.com', proxy: 'http://proxy.com')
     @_client ||= Faraday.new(BASE_URL) do |client|
       client.request :url_encoded
       client.adapter Faraday.default_adapter
