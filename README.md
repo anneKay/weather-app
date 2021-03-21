@@ -3,8 +3,9 @@
 * Description
   Weather-app is an API that returns current weather data as JSON to user. 
   User can query for weather data for a city by searching by city.
+  This API retrieves current weather data from https://openweathermap.org/current 
 
-a sample query - https://localhost:3000/v1/weather?city=lagos
+  >- A sample query - https://localhost:3000/v1/weather?city=lagos
 
 * Ruby version
 
@@ -19,7 +20,6 @@ a sample query - https://localhost:3000/v1/weather?city=lagos
 
 * How to run the test suite
 Run rspec spec
-This API retrieves current weather data from https://openweathermap.org/current 
 
 ### Submission Date
 21/03/2021
@@ -28,9 +28,9 @@ https://sheltered-reaches-68131.herokuapp.com/
 ### Time spent
 5 hours
 ### Assumptions made
-The user should search by city to retrieve weather data
-The user needs to signup to be able to search for weather
-To make a request to retrieve weather, user needs to add the token generated during login to the request header
+1. The user should search by city to retrieve weather data
+2. The user needs to signup to be able to search for weather
+3. To make a request to retrieve weather, user needs to add the token generated during login to the request header
 
 ### Shortcuts/Compromises made
   This solution does not have it's own validation. It only uses html5 form validation
@@ -41,19 +41,19 @@ To make a request to retrieve weather, user needs to add the token generated dur
 
 The deployed version of the app is hosted on heroku,  however, due to some limitations on my heroku account,  I couldn't use any of heroku's addon to setup a proxy, so this service can be tested locally only.
 ### Instructions to run assignment locally
-  CD into the root directory
-  Run bundle install
-  Run yarn 
-  Run rails s to start the server
-  Go to http://localhost:3000 to interact with the app.
+  1. CD into the root directory
+  2.  Run bundle install
+  3. Run yarn 
+  4. Run rails s to start the server
+  5. Go to http://localhost:3000 to interact with the app.
 
-  To interact with the API only
-  Go to `http://localhost:3000/v1/users` to sign up, params: [email, name, password]
-  Go to `http://localhost:3000/v1/auth/login` to login, params: [params: email, password]
+  6. To interact with the API only
+  7. Go to `http://localhost:3000/v1/users` to sign up, params: [email, name, password]
+  8. Go to `http://localhost:3000/v1/auth/login` to login, params: [params: email, password]
 ### What did you not include in your solution that you want us to know about?
-  I would have used redis to cache data
-  I would have added extra feature that allows user to view his recent searches/history
-  I would also write more unit test both for the backend and frontend
+  1. I would have used redis to cache data
+ 2. I would have added extra feature that allows user to view his recent searches/history
+  3. I would also write more unit test both for the backend and frontend
 ### Other information about your submission that you feel it's important that we know if applicable.
 
 * ...
