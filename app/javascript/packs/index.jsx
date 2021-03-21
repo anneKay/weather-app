@@ -4,8 +4,8 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom'
-// import '../../stylesheets/App.scss'
-// import '../../assets/stylesheets/app.scss'
+import "../../assets/stylesheets/index.scss";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import App from '../routes/App';
 
 document.addEventListener('DOMContentLoaded', () => {

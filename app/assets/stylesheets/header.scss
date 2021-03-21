@@ -1,0 +1,57 @@
+@import "./shared/colors.scss";
+
+.HeaderContainer {
+  position: fixed;
+  top: 0;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  padding: 10px 40px;
+  box-shadow: 1px 1px 8px $light_grey;
+  background-color: $white;
+  z-index: 5;
+ 
+  .HeaderLinks {
+    display: flex;
+    width: 300px;
+    padding-top: 10px;
+    @media (max-width: 950px) {
+      display: none;
+    }
+    a {
+      padding: 2px 10px;
+      font-weight: bolder;
+      color: inherit;
+      font-size: 0.95rem;
+      &:hover {
+        color: $green;
+      }
+    }
+    .AuthLinks {
+      width: 130px;
+      display: flex;
+      a {
+        padding: 0 5px;
+      }
+    }
+    .btn-outline-success {
+      padding: 0 15px;
+    }
+    .avatar {
+      display: flex;
+      margin: 0 0 0 20px;
+      cursor: pointer;
+      img {
+        border-radius: 50%;
+        height: 30px;
+        width: 30px;
+      }
+      p {
+        margin: 5px 0 0 5px;
+      }
+    }
+  }
+}
+
