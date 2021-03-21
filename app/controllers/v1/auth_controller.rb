@@ -10,8 +10,8 @@ class V1::AuthController < ApplicationController
   private
 
   def user
-    user ||= User.find_by(email: auth_params[:email])
-    return user if user.present? && user.authenticate(auth_params[:password])
+    @user ||= User.find_by(email: auth_params[:email])
+    return @user if @user.present? && @user.authenticate(auth_params[:password])
 
     raise(ExceptionHandler::AuthenticationError, "Invalid Credentials")
   end

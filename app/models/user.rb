@@ -7,7 +7,7 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false },
                     length: { maximum: 50 },
                     format: { with: VALID_EMAIL_REGEX}
-
+  validates :password_digest, presence: true
   has_many :stories
 
   has_secure_password
