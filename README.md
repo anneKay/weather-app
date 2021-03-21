@@ -38,8 +38,6 @@ https://sheltered-reaches-68131.herokuapp.com/
 1. Has a simple UI service which can be accessed at the root route
 2. Uses JWT for authentication
 3. Fetched real weather data from https://openweathermap.org/current 
-
-The deployed version of the app is hosted on heroku,  however, due to some limitations on my heroku account,  I couldn't use any of heroku's addon to setup a proxy, so this service can be tested locally only.
 ### Instructions to run assignment locally
   1. CD into the root directory
   2.  Run bundle install
@@ -53,6 +51,8 @@ The deployed version of the app is hosted on heroku,  however, due to some limit
 
   8. Go to `http://localhost:3000/v1/auth/login` to login, 
   ```params => auth: { email:email, password:password}```
+
+  9. Run `http://localhost:3000/v1/weather?city={city}` to retrieve weather information. To run this request successfuly, add user token to request header; Authorization: "Bearer #{token}"
 ### What did you not include in your solution that you want us to know about?
   1. I would have used redis to cache data
  2. I would have added extra feature that allows user to view his recent searches/history
