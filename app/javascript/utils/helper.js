@@ -1,4 +1,4 @@
-import cookieUtil from './cookie';
+import CookieUtil from './cookie';
 
 /**
  * @description Helper method to retrieve csrf token
@@ -9,20 +9,20 @@ import cookieUtil from './cookie';
   const csrfData = document.querySelector('meta[name="csrf-token"]');
   return csrfData && csrfData.content;
 };
+export const authToken = CookieUtil.getItem('user-auth');
 
+export const userData = CookieUtil.getItem('user');
 export const prepareQuery = (url, payload) => ({
   url: `http://localhost:3000/v1${url}`,
   headers: {
     Accept: 'application/json',
     'Content-Type': 'application/json',
-      'X-CSRF-Token': token()
+    'X-CSRF-Token': token(),
+    ...(authToken) && {
+      'Authorization': `Bearer ${authToken}`
+    }
   },
   data: JSON.stringify(payload),
   mode: 'cors',
   credentials: 'same-origin'
 });
-
-export const isLoggedIn = cookieUtil.getItem('userData');
-
-export const userData =
-  cookieUtil.getItem('userData') && JSON.parse(cookieUtil.getItem('userData'));
