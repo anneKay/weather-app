@@ -13,7 +13,7 @@ export const authToken = CookieUtil.getItem('user-auth');
 
 export const userData = CookieUtil.getItem('user');
 export const prepareQuery = (url, payload) => ({
-  url: `http://localhost:3000/v1${url}`,
+  url: `/v1${url}`,
   headers: {
     Accept: 'application/json',
     'Content-Type': 'application/json',
