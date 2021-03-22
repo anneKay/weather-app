@@ -5,7 +5,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
 import "../../assets/stylesheets/index.scss";
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+import '../../stylesheet/App.scss'
 import App from '../routes/App';
 
 document.addEventListener('DOMContentLoaded', () => {
