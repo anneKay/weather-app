@@ -30,9 +30,9 @@ const FormHook = () => {
     } else {
       fetchData(prepareQuery(`/${path}`, formData), 'POST')
         .then(response => {
-          setIsLoading(false);
           CookieUtil.setItem("user", response.data.name);
           CookieUtil.setItem("user-auth", response.headers.authorization);
+          setIsLoading(false);
           history.push("/");
         })
         .catch((error) => {
