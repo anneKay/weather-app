@@ -26,6 +26,7 @@ const FormHook = () => {
     if (passwordError(formData)) {
       setError(passwordError(formData));
       setIsLoading(false);
+      return;
     } else {
       fetchData(prepareQuery(`/${path}`, formData), 'POST')
         .then(response => {
