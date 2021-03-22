@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { FormControl, InputGroup, Button, Alert, Form } from 'react-bootstrap';
 import Header from "../shared/Header";
 import fetchData from "../../utils/api";
 import { prepareQuery } from "../../utils/helper";
 import { authToken } from  "../../utils/helper";
 import { useHistory } from "react-router-dom";
+import UserContext from "../shared/provider/UserContext";
 import "../../../assets/stylesheets/home.scss";
 
 const HomePage = () => {
@@ -15,9 +16,10 @@ const HomePage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
   const [weatherData, setWeatherData] = useState({});
+  const { userData } = useContext(UserContext);
 
   useEffect(() => {
-    if (!authToken) {
+    if (!authToken  && !userData.length > 0) {
       history.push("/signup");
     }
   })

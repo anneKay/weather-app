@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import fetchData from "../../utils/api";
 import { useHistory } from "react-router-dom";
 import { prepareQuery } from "../../utils/helper";
 import CookieUtil from "../../utils/cookie";
+import UserContext from "./provider/UserContext";
 
 const FormHook = () => {
 
@@ -10,6 +11,7 @@ const FormHook = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(error);
   const [formData, setFormData] = useState({});
+  const { userData, setUserData } = useContext(UserContext);
 
   const passwordError = (data) => {
     const error = 'your passwords do not match';
@@ -33,6 +35,7 @@ const FormHook = () => {
           CookieUtil.setItem("user", response.data.name);
           CookieUtil.setItem("user-auth", response.headers.authorization);
           setIsLoading(false);
+          setUserData(response.data.name);
           history.push("/");
         })
         .catch((error) => {
@@ -47,7 +50,7 @@ const FormHook = () => {
         });
     }
   }
-  return {onSubmit, error, formData , isLoading, handleChange};
+  return {onSubmit, error, formData , isLoading, handleChange, userData};
 
 }
 
