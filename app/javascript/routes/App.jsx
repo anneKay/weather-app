@@ -14,7 +14,7 @@ class App extends React.Component {
           <Route exact path="/" component={HomePage} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={Signup} />
-          {/* <Route path="/*" render={() => ("Page not found")} /> */}
+          <Route path="/*" render={() => ("Page not found")} />
         </Switch>
       </BrowserRouter>
     );
