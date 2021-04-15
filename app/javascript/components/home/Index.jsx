@@ -78,7 +78,7 @@ const HomePage = () => {
           <p className="city">{`${weatherData.name}, 
           ${weatherData.sys.country}, 
           ${weatherData.weather[0].description}`}</p>
-          <p>{`${weatherData.wind.speed}, ${weatherData.clouds.all}`} </p>
+          <p>{`Wind ${weatherData.wind.speed}, Coud ${weatherData.clouds.all}`} </p>
           <p>{`Geo cords[${weatherData.coord.lon, weatherData.coord.lat}]`}</p>
         </div>
       )}
