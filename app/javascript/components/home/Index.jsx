@@ -7,6 +7,7 @@ import { authToken } from  "../../utils/helper";
 import { useHistory } from "react-router-dom";
 import UserContext from "../shared/provider/UserContext";
 import "../../../assets/stylesheets/home.scss";
+import CookieUtil from "../../utils/cookie";
 
 const HomePage = () => {
 
@@ -26,9 +27,10 @@ const HomePage = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    const authToken = CookieUtil.getItem('user-auth');
     setIsLoading(true);
     if (city.trim().length > 0) {
-      fetchData(prepareQuery(`/weather?city=${city}`))
+      fetchData(prepareQuery(`/weather?city=${city}`, {} , authToken ))
         .then(response => {
           setWeatherData({...weatherData, ...response.data.data});
           setIsLoading(false)

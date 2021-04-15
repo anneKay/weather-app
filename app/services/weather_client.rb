@@ -1,6 +1,6 @@
 class WeatherClient
   BASE_URL = Rails.application.credentials.base_url
-  API_KEY = Rails = Rails.application.credentials.api_key
+  API_KEY = Rails.application.credentials.api_key
 
   def get_weather(params)
     response = client.get(BASE_URL, weather_params(params))

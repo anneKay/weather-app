@@ -10,16 +10,15 @@ import CookieUtil from './cookie';
   return csrfData && csrfData.content;
 };
 export const authToken = CookieUtil.getItem('user-auth');
-
 export const userData = CookieUtil.getItem('user');
-export const prepareQuery = (url, payload) => ({
+export const prepareQuery = (url, payload, auth="") => ({
   url: `/v1${url}`,
   headers: {
     Accept: 'application/json',
     'Content-Type': 'application/json',
     'X-CSRF-Token': token(),
-    ...(authToken) && {
-      'Authorization': `Bearer ${authToken}`
+    ...(auth) && {
+      'Authorization': `Bearer ${auth}`
     }
   },
   data: JSON.stringify(payload),
